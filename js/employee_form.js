@@ -66,10 +66,6 @@ const getInputValueById = (id) =>{
     return value;
 }
 
-const getInputValueById = (id) =>{
-    let value=document.getElementById(id).value;
-    return value;
-}
 const getSelectedValues = (propertyValue) =>{
     let allItems=document.querySelectorAll(propertyValue);
     let selItems=[];
