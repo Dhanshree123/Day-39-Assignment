@@ -26,11 +26,11 @@ class EmployeePayrollData{
     get gender(){
         return this._gender;
     }
-    set departments(departments){
-        this._departments=departments;
+    set department(department){
+        this._department=department;
     }
-    get departments(){
-        return this._departments;
+    get department(){
+        return this._department;
     }
     set salary(salary){
         this._salary=salary;
@@ -39,7 +39,17 @@ class EmployeePayrollData{
         return this._salary;
     }
     set startDate(startDate) {
-        this._startDate = startDate;
+        const options = { year: "numeric", month: "long", date: "numeric"};
+        if(startDate != undefined) {
+            if(startDate < new Date())
+            {
+                const empDate = this.startDate === "undefined" ? "undefined" :
+                    startDate.toLocaleDateString("en-US", options);
+                this._startDate = empDate;
+            }
+            else 
+                throw "Future Start date not valid. Enter correct joining date";
+        }
     }
     get startDate(){
         return this._startDate;

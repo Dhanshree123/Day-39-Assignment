@@ -44,21 +44,21 @@ const createEmployeePayrollData = () =>{
     let employeePayrollData=new EmployeePayrollData();
     try{
         employeePayrollData.name=getInputValueById('#name');
-        console.log("name entered is "+employeePayrollData.name);
-    }catch(e){
-        setTextValue('.text-error',e);
-        throw e;
-    }
-    employeePayrollData.profilePic = getSelectedValues('[name=profile]').pop();
-    employeePayrollData.gender = getSelectedValues('[name=gender]').pop();
-    employeePayrollData.departments=getSelectedValues('[name=department]').pop();
-    console.log("department "+employeePayrollData.departments);
-    employeePayrollData.salary=getInputValueById('#salary');
-    employeePayrollData.notes=getInputValueById('#notes');
-    employeePayrollData.startDate = new Date(getInputValueById('#year'), getInputValueById('#month'),
+        employeePayrollData.profilePic = getSelectedValues('[name=profile]').pop();
+        employeePayrollData.gender = getSelectedValues('[name=gender]').pop();
+        employeePayrollData.departments=getSelectedValues('[name=department]');
+        console.log("department "+employeePayrollData.departments);
+        employeePayrollData.salary=getInputValueById('#salary');
+        employeePayrollData.notes=getInputValueById('#notes');
+        employeePayrollData.startDate = new Date(getInputValueById('#year'), getInputValueById('#month'),
                                             getInputValueById('#day'));
     alert(employeePayrollData.toString());
     return employeePayrollData;
+    }catch(e){
+        alert(error);
+        setTextValue('.text-error',e);
+        throw e;
+    }
 }
 
 const getInputValueById = (id) =>{
