@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="..\css\employee_form.css">
     <script src="..\js\employee_form.js"></script>
     <script src="..\js\EmployeePayrollData.js"></script>
+    <script src="..\js\utility.js"></script>
     <title>Employee payroll form</title>
 </head>
 <body>
@@ -20,7 +21,7 @@
         </div>
     </header>
     <div class="form-content">
-        <form class="form" action="#" onreset = "resetForm()" onsubmit="save()">
+        <form class="form" action="#" onreset = "resetForm()" onsubmit="save(event)">
             <div class="form-head">
                 Employee Payroll form
             </div>
@@ -87,7 +88,7 @@
             </div>
             <div class="row-content">
                 <label class="label text" for="startDate">Start Date</label>
-                <div>
+                <div id ="date">
                     <select id="day" name="day">
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -122,31 +123,33 @@
                         <option value="31">31</option>
                     </select>
                     <select id="month" name="Month">
-                        <option value="1">January</option>
-                        <option value="2">Febuary/option>
-                        <option value="3">March</option>
-                        <option value="4">April</option>
-                        <option value="5">May</option>
-                        <option value="6">June</option>
-                        <option value="7">July</option>
-                        <option value="8">August</option>
-                        <option value="9">September</option>
-                        <option value="10">October</option>
-                        <option value="11">November</option>
-                        <option value="12">December</option>
+                        <option value="Jan">January</option>
+                        <option value="Feb">Febuary</option>
+                        <option value="Mar">March</option>
+                        <option value="Apr">April</option>
+                        <option value="May">May</option>
+                        <option value="Jun">June</option>
+                        <option value="Jul">July</option>
+                        <option value="Aug">August</option>
+                        <option value="Sep">September</option>
+                        <option value="Oct">October</option>
+                        <option value="Nov">November</option>
+                        <option value="Dec">December</option>
                     </select>
-                    <select id="year" name="Year">
+                    <select id="year" name="year">
                         <option value="2020">2020</option>
                         <option value="2019">2019</option>
                         <option value="2018">2018</option>
                         <option value="2017">2017</option>
                         <option value="2016">2016</option>
                     </select>
+                    
                 </div>
             </div>
+    
             <div class="row-content">
                 <label class="label text" for="notes">Notes</label>
-                <textarea id="notes" class="input" name="notes" placeholder="" style="height:100px"></textarea>
+                <textarea id="notes" class="input" name="Notes" placeholder="" style="height:100px;"></textarea>
             </div>
             <div class="buttonParent">
                 <a href="./employee_form.html" class="resetButton button cancelButton">Cancel</a>
