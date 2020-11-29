@@ -214,9 +214,11 @@ const setForm = () => {
     setValue('#notes',employeePayrollObj._notes);
     setTextValue('.salary-output',employeePayrollObj._salary);
     let date = stringifyDate(employeePayrollObj._startDate).split(" ");
-    setSelectedIndex('#day',date[0]);
-    setSelectedIndex('#month',date[1]);
-    setSelectedIndex('#year',date[2]);
+    let monthMap = new Map([["Jan",0],["Feb",1],["Mar",2],["April",3],["May",4],["Jun",5],["Jul",6],["Aug",7],["Sep",8],["Oct",9],["Nov",10],["Dec",11]]);
+    let yearMap = new Map([["2020",0],["2019",1],["2018",2],["2017",3],["2016",4]]);
+    setSelectedIndex('#day',date[0]-1);
+    setSelectedIndex('#month',monthMap.get(date[1]));
+    setSelectedIndex('#year',yearMap.get(date[2]));
 }
 
 const getMaxValueOfEmployeeID =()=>{
